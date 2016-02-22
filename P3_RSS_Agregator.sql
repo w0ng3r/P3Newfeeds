@@ -86,8 +86,8 @@ CREATE TABLE wn16_P3_subCategories(
 CREATE TABLE wn16_P3_Articles(
     ArticleID INT UNSIGNED NOT NULL AUTO_INCREMENT,
     #subCategoryID REFERENCES wn16_P3_subCategories(subCategoryID),
-    subCategoryID REFERENCES wn16_P3_subCategories(subCategoryID),
-    SourceID REFERENCES wn16_P3_Source(SourceID),
+    subCategoryID INT UNSIGNED,
+    SourceID INT UNSIGNED,
     Title VARCHAR(64) Default '',
     Content VARCHAR(256) Default '',
     Description VARCHAR(512) Default '',
@@ -105,7 +105,6 @@ CREATE TABLE wn16_P3_Source(
     ) ENGINE=INNODB;
     
 
-}
     
     
 
