@@ -9509,7 +9509,7 @@ class SimplePie_Cache_File implements SimplePie_Cache_Base
  * @package SimplePie
  * @subpackage Caching
  */
-class SimplePie_Cache_MySQL extends SimplePie_Cache_DB
+class SimplePie_Cache_MySQL extends SimplePie_Cache
 {
 	/**
 	 * PDO instance
