@@ -6,7 +6,7 @@ include 'include/NewsItem.php';
 $config->titleTag = "RSS Viewer Page"; #Fills <title> tag. If left empty will fallback to $config->titleTag in config_inc.php  
 $config->banner = 'RSS Viewer'; #goes inside header
 $iConn = @mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) or die(myerror(__FILE__,__LINE__,mysqli_connect_error())) ;
-$sql = 'select Time_Stamp from wn16_p3_articles limit 1';
+$sql = 'select Time_Stamp from wn16_p3_articles limit 1 desc';
 $result = mysqli_query($iConn, $sql);
 $lastUpdate =  new DateTime();
 $numRow = mysqli_num_rows($result);
@@ -40,7 +40,7 @@ if(($timeDifference > 10) || $numRow ==0)
 
 
 //display results
-$sql2 = 'select * from wn16_p3_articles limit 10';
+$sql2 = 'select * from wn16_p3_articles limit 10 desc';
 $result2 = mysqli_query($iConn, $sql2);
 
 echo '
